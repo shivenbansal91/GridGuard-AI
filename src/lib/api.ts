@@ -41,3 +41,13 @@ export async function runSimulation(percent: number): Promise<FullData> {
     body: JSON.stringify({ percent }),
   });
 }
+
+/** Fetch AI explanation + solution for a specific house (on-demand, cached server-side 5 min) */
+export async function fetchExplanation(houseId: number): Promise<{
+  house_id: number;
+  ai_explanation: string;
+  solution: string;
+  source: "openai" | "fallback";
+}> {
+  return fetchJSON(`${BASE_URL}/api/explanation?house_id=${houseId}`);
+}

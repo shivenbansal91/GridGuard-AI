@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Types that match the real ML backend JSON (theft_detection_results_v3.json)
+// Types that match the real ML backend JSON (theft_detection_results_v4.json)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type RiskLevel = "high" | "medium" | "low";

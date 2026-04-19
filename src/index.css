@@ -193,3 +193,61 @@
   color: hsl(215 20% 65%) !important;
 }
 .leaflet-control-attribution a { color: hsl(180 100% 60%) !important; }
+
+/* ── Custom Scrollbars ───────────────────────────────────────────────── */
+
+/* Global subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(180 100% 50% / 0.18);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(180 100% 50% / 0.35);
+}
+
+/* Timeline column — themed glowing scrollbar */
+.timeline-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.timeline-scroll::-webkit-scrollbar-track {
+  background: hsl(222 40% 10% / 0.5);
+  border-radius: 99px;
+}
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(180 100% 50% / 0.6), hsl(200 100% 55% / 0.3));
+  border-radius: 99px;
+  box-shadow: 0 0 6px hsl(180 100% 50% / 0.4);
+}
+.timeline-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(180 100% 65% / 0.9), hsl(200 100% 60% / 0.6));
+  box-shadow: 0 0 10px hsl(180 100% 50% / 0.6);
+}
+
+/* Firefox */
+.timeline-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(180 100% 50% / 0.4) transparent;
+}
+
+/* ── Entrance Animations ─────────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease both;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease both;
+}

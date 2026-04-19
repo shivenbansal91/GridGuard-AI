@@ -56,7 +56,7 @@ const Landing = () => {
             </span>
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center justify-center">
             <Button
               size="lg"
               onClick={() => navigate("/dashboard")}
@@ -64,15 +64,12 @@ const Landing = () => {
             >
               View Dashboard <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8 glass border-primary/30">
-              Watch Demo
-            </Button>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mt-20 max-w-3xl mx-auto">
             {[
-              { value: "98.4%", label: "Detection Accuracy" },
+              { value: "~85%", label: "Model Precision (Isolation Forest)" },
               { value: "₹2.4Cr", label: "Avg. Annual Recovery" },
               { value: "<2s", label: "Real-time Alerts" },
             ].map((s) => (

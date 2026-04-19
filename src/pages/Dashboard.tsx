@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import GridMap from "@/components/GridMap";
 import AIInsights from "@/components/AIInsights";
+import AIExplanationPanel from "@/components/AIExplanationPanel";
 import SimulationControls from "@/components/SimulationControls";
 import AnomalyTimeline from "@/components/AnomalyTimeline";
 import { ConsumptionChart, RiskDistributionChart } from "@/components/Charts";
@@ -255,6 +256,12 @@ const Dashboard = () => {
   const hotspots = useMemo(() => detectHotspots(mapHouses), [mapHouses]);
   const timeSeries = useMemo(() => (data ? generateTimeSeries(data) : []), [data]);
   const timeline = useMemo(() => generateAnomalyTimeline(mapHouses), [mapHouses]);
+
+  // ── Selected house object (used by AIExplanationPanel) ──
+  const selectedHouse = useMemo(
+    () => (selectedId !== null ? mapHouses.find((h) => h.house_id === selectedId) ?? null : null),
+    [selectedId, mapHouses]
+  );
 
   // ── Run simulation ──
   const handleRunSimulation = async () => {
@@ -652,6 +659,9 @@ const Dashboard = () => {
               )}
             </div>
           </div>
+
+          {/* AI Explanation Panel — below charts, full width of left column */}
+          <AIExplanationPanel house={selectedHouse} />
         </section>
 
         {/* Right sidebar */}
