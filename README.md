@@ -297,12 +297,10 @@ Base URL: `http://localhost:8000`
 
 ---
 
-## 👥 Team — Hack Helix
+## 👥 Team — Runtime Terror
 
 > GridGuard AI — *Securing the grid, one anomaly at a time.*
 
 ---
 
-## 📄 License
 
-This project was built for the **Hack Helix hackathon**. All code is open for educational and demonstration purposes.
