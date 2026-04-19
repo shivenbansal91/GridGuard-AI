@@ -29,7 +29,7 @@ The project covers the **Chandigarh sector grid** (Sector 17 area) with 50 fixed
 | Charts | Recharts |
 | Backend | Python FastAPI (uvicorn) |
 | ML Model | Isolation Forest (`sklearn`) — unsupervised anomaly detection |
-| AI Insights | Google Gemini 2.5 Flash Lite (optional) |
+| AI Insights | Google Gemini 2.5 Flash Lite |
 | State | TanStack React Query |
 
 ---
@@ -89,7 +89,7 @@ The model (`electricity_theft_detector_v4.py`) uses **Isolation Forest**, an uns
 
 - **Node.js** ≥ 18 and npm
 - **Python** ≥ 3.10
-- (Optional) **GEMINI_API_KEY** for AI-powered house explanations
+- **GEMINI_API_KEY** for AI-powered house explanations
 
 ---
 
